@@ -1,1 +1,21 @@
+<!DOCTYPE html>
 
+<html>
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <title>Cung City's Domain</title>
+
+</head>
+
+<body>
+    <h1>My Code</h1>
+    <p>This is a simple HTML page that contains a header and a paragraph.</p>
+    <p>Feel free to modify this code as needed.</p>
+    <div class = "capp">
+
+    </div>
+    <img id="cap" src="download.jpg">
+</body>
+
+</html>
