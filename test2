@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buffering Spinner</title>
+  <style>
+    body {
+      background: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #444;
+      border-top: 6px solid #00ffcc;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spinner"></div>
+
+</body>
+</html>
+<script>
+    // Add text below the spinner
+    const spinner = document.querySelector('.spinner');
+    const text = document.createElement('div');
+    text.style.color = '#fff';
+    text.style.textAlign = 'center';
+    text.style.marginTop = '20px';
+    text.style.marginLeft = '10px';
+    text.textContent = 'Buffering, please wait...';
+    spinner.insertAdjacentElement('afterend', text);
+
+    // Redirect after 10 seconds
+    setTimeout(() => {
+        window.location.href = 'my.code';
+    }, 1000);
+</script>
