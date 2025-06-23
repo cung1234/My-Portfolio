@@ -10,7 +10,7 @@
         message.textContent = "Unlocked!";
         message.style.color = "lightgreen";
         setTimeout(() => {
-            window.location.href = "test2";
+            window.location.href = "test2.html";
                 }, 700);
             } else {
                 lockIcon.classList.add("shake");
