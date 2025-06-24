@@ -1,10 +1,15 @@
-let about = document.querySelector(".sr-only");
-let homeBtn = document.querySelector(".home-btn");
-let workBtn = document.querySelector(".works");
-let contactBtn = document.querySelector(".contact-me");
+let aboutBtn = document.querySelector("#about");
+let homeBtn = document.querySelector("#home");
+let contactBtn = document.querySelector("#contact");
 const hamburger = document.querySelector(".nav_hamburger");
 const linksContainer = document.querySelector(".nav_menu");
 const links = document.querySelectorAll(".nav_menu_link");
+
+aboutBtn.addEventListener("click", function() {
+    
+
+});
+
 
 hamburger.addEventListener("click", () => {
     linksContainer.classList.toggle("active");

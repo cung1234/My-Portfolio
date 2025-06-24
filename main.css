@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     background-image: url('stellar.png');
 }
@@ -5,6 +10,10 @@ html {
     font-size: 40px;
     font-weight: bold;
     color: #333;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .bg {
@@ -36,16 +45,18 @@ html {
 
 .nav_logo {
     font-size: 1.5rem;
-    margin: auto 1rem;
+    margin: .5rem 1rem 0 0;
     align-self: flex-start;
     margin-top: 0.5rem;
     color: #fff;
+    align-self: flex-start;
 }
 
 .nav_menu ul {
     margin: 0;
     padding: 0;
     display: flex;
+    
 }
 
 .nav menu ul li {
@@ -97,6 +108,7 @@ html {
         top: -13rem;
         width: 100%;
         transition: all ease-in-out .4s;
+        left: 0;
     }
     .nav {
         flex-direction: column;
@@ -106,6 +118,7 @@ html {
         flex-direction: column;
         width: 100%;
         padding: 3rem 0 0.6rem;
+        
     }
     .nav_menu ul li {
         text-align: center;
@@ -127,24 +140,130 @@ html {
     }
 }
 
-button {
-    background: grey;
-    color: #333;
-    border: none;
-    border-radius: 22px;
-    padding: 7px 18px;
-    font-size: 14px;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    letter-spacing: 1.5px;
-    box-shadow: 0 0 10px #333, 0 0 18px #222 inset;
-    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-    cursor: pointer;
-    outline: none;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-button:hover, button:focus {
-    background: linear-gradient(90deg, #4b004b 0%, #3a006a 100%);
-    box-shadow: 0 0 18px #4b004b, 0 0 32px #3a006a inset;
-    transform: scale(1.05);
-    color: #fff;
+body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+
+	--bkg: #5eb3fd;
+	--white: #e7e6e6;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+}
+
+.title h3 {
+	font-size: 40px;
+	font-weight: 900;
+	font-family: "Montserrat", sans-serif;
+	color: white;
+}
+
+.ghost {
+	width: 8vmin;
+	height: 12vmin;
+	background-color: var(--white);
+	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+	background-image: radial-gradient(ellipse at 35% 40%, #000 8%, transparent 0%),
+		radial-gradient(ellipse at 65% 40%, #000 8%, transparent 0%),
+		radial-gradient(ellipse at 50% 60%, #000 8%, transparent 0%);
+	border-radius: 100% / 70% 70% 0% 0%;
+	transform: translateX(100em) rotateZ(-90deg);
+	position: relative;
+	opacity: 0.9;
+	mix-blend-mode: exclusion;
+	animation: ghostMove 4s ease-out infinite;
+}
+@keyframes ghostMove {
+	0% {
+		transform: translateX(30em) rotateZ(-90deg);
+	}
+	100% {
+		transform: translateX(-35em) rotateZ(-90deg);
+	}
+}
+.ghost div {
+	position: absolute;
+	width: 20%;
+	background-color: var(--white);
+	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+.ghost div:nth-of-type(1) {
+	height: 7vmin;
+	left: 0;
+	bottom: -6vmin;
+	border-radius: 100% / 0% 0% 50% 50%;
+}
+.ghost div:nth-of-type(2),
+.ghost div:nth-of-type(4) {
+	height: 4vmin;
+	left: 20%;
+	bottom: -3vmin;
+	border-radius: 100% / 50% 50% 0% 0%;
+	background-color: transparent;
+}
+.ghost div:nth-of-type(3) {
+	height: 4vmin;
+	left: 40%;
+	bottom: -3.95vmin;
+	border-radius: 100% / 0% 0% 60% 60%;
+	background-color: var(--white);
+}
+.ghost div:nth-of-type(4) {
+	left: 60%;
+}
+.ghost div:nth-of-type(5) {
+	height: 3vmin;
+	left: 80%;
+	bottom: -2.9vmin;
+	border-radius: 100% / 0% 0% 70% 70%;
+	background-color: var(--white);
+}
+
+/* Ensure nav stays at the top */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    background: transparent;
+    padding: 0 1rem;
+}
+
+.ghost {
+    animation: ghostMove 4s ease-in-out infinite;
+}
+
+@keyframes ghostMove {
+    0% {
+        transform: translateX(110vw) rotateZ(-90deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-35em) rotateZ(-90deg);
+        opacity: 0;
+    }
 }
