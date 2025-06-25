@@ -56,6 +56,8 @@ hr {
 }
 
 
+
+
 .about-section {
     background-color: #305472;
     padding:1vw;
@@ -79,6 +81,7 @@ hr {
 
 .about-text h2 {
     text-align: center;
+    font-size: 36px;
 }
 
 .about-text p {
