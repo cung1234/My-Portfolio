@@ -58,7 +58,9 @@ hr {
 
 .about-section {
     background-color: #305472;
-    padding: 4rem 100%;
+    padding:1vw;
+    padding-left: 300px;
+    padding-right: 300px;
     margin-top: .5rem;
     margin-bottom: 2rem;
     color: black;
