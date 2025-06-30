@@ -20,20 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.nav_hamburger');
-  const navMenu = document.querySelector('.nav_menu');
-
-  hamburger.addEventListener('click', e => {
-    e.preventDefault(); // prevent # jump
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-  });
-});
-
-
 // Close menu when a nav link is clicked (on small screens)
 links.forEach((link) => {
   link.addEventListener("click", () => {
@@ -74,3 +60,4 @@ document.querySelectorAll('a[href="#home"]').forEach(link => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+

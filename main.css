@@ -4,22 +4,46 @@
     box-sizing: border-box;
 }
 
-
-
 html {
     background-image: url('stellar.png');
     scroll-behavior: smooth;
 }
 
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    --bkg: #5eb3fd;
+    --white: #e7e6e6;
+    overflow: auto;
+    position: relative;
+    width: 100vw;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-color: #3c6a92;
+}
+
 .title {
-    font-size: 40px;
+    font-size: clamp(2rem, 5vw, 40px);
     font-weight: bold;
     color: #fff;
     text-align: center;
     margin-top: 2rem;
 }
 
-
+.title h1 {
+    font-size: clamp(2.5rem, 6vw, 45px);
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    justify-content: center;
+}
 
 hr.thickLine {
     border: 2px solid black;
@@ -39,63 +63,53 @@ hr {
     border-width: 1px;
 }
 
-
-.about-text p {
-    font-size: clamp(1rem, 2.5vw, 24px);
-    line-height: 1.6;
+.about-section {
+    background-color: #305472;
+    padding: 4vw 5vw;
+    margin: .5rem auto;
+    color: black;
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .about-content {
     max-width: 800px;
     margin: auto;
+    width: 100%;
 }
-
 
 .about-text {
-  flex: 1 1 300px; /* Takes available space, minimum 300px */
+    flex: 1 1 300px;
 }
 
-
-
-
-.about-section {
-    background-color: #305472;
-    padding:1vw;
-    padding-left: 300px;
-    padding-right: 300px;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    color: black;
+.about-text h2 {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 36px);
 }
 
+.about-text p {
+    font-size: clamp(1rem, 2.5vw, 24px);
+    text-align: center;
+    padding-top: 20px;
+    line-height: 1.6;
+}
 
 #profile-image {
     display: flex;
     align-items: center;
     max-width: 240px;
+    width: 60vw;
     height: auto;
     margin: 0 auto;
     padding-top: 45px;
 }
 
-
-.about-text h2 {
-    text-align: center;
-    font-size: 36px;
-}
-
-.about-text p {
-    font-size: 34px;
-    text-align: center;
-    padding-top: 20px;
-}
-
 .projects-background {
     background: #3c6a92;
-    width: 100%;
+    width: 100vw;
     padding: 2rem 0;
 }
-
 
 .projects-section {
     background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
@@ -105,11 +119,13 @@ hr {
     margin: 2rem auto;
     padding: 2.5rem 2rem;
     color: #222;
+    width: 95vw;
+    box-sizing: border-box;
 }
 
 .projects-section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     color: #305472;
     margin-bottom: 1.5rem;
     font-family: "Montserrat", sans-serif;
@@ -119,27 +135,31 @@ hr {
 
 .contacts-background {
     background-color: #3f6b93;
-    width: 100%;
-    padding: 2rem 0; /* Adds vertical spacing around the box */
+    width: 100vw;
+    padding: 2rem 0;
     margin-top: .5rem;
     margin-bottom: .5rem;
 }
 
-
 .contacts-section {
-  max-width: 700px;
-  margin: 0 auto;          
-  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 24px rgba(48,84,114,0.10);
-  padding: 2.5rem 2rem;
-  color: #222;
+    max-width: 700px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(48,84,114,0.10);
+    padding: 2.5rem 2rem;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    box-sizing: border-box;
 }
-
 
 .contacts-section h2 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
     color: #305472;
     margin-bottom: 1.2rem;
     font-family: "Montserrat", sans-serif;
@@ -173,7 +193,6 @@ hr {
     transform: translateY(-3px) scale(1.04);
 }
 
-
 .contact-form {
     width: 100%;
     max-width: 420px;
@@ -196,7 +215,6 @@ hr {
     resize: none;
 }
 
-
 .contact-form button {
     align-self: flex-end;
     padding: 0.6rem 1.5rem;
@@ -210,55 +228,20 @@ hr {
     transition: background 0.18s;
 }
 
-
-
-@media (max-width: 700px) {
-    .contacts-section {
-        padding: 1.2rem 0.5rem;
-    }
-    .contacts-list {
-        gap: 1rem;
-    }
-    .contact-form {
-        max-width: 100%;
-    }
-}
-
-
-
-@media (max-width: 700px) {
-    .projects-section {
-        padding: 1.2rem 0.5rem;
-    }
-    .projects-section h2 {
-        font-size: 2rem;
-    }
-    .projects-grid {
-        gap: 1.2rem;
-    }
-}
-
-
-.bg {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
+/* NAVIGATION */
+.nav {
+    position: fixed;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, #07131c, #305472);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: -2;
-}
-
-.nav {
+    width: 100vw;
+    z-index: 100;
+    background: transparent;
+    padding: 0 1rem;
     height: 3.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    
 }
 
 .nav_menu_link {
@@ -273,17 +256,15 @@ hr {
     align-self: flex-start;
     margin-top: 0.5rem;
     color: #fff;
-    align-self: flex-start;
 }
 
 .nav_menu ul {
     margin: 0;
     padding: 0;
     display: flex;
-    
 }
 
-.nav menu ul li {
+.nav_menu ul li {
     list-style: none;
 }
 
@@ -317,178 +298,59 @@ hr {
     transition: all ease-in-out .2s;
 }
 
-
-
-
-@media screen and (max-width: 550px) {
-    .nav_hamburger {
-        display: flex;
-    }
-    .nav_menu {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        background-color: rgba(255, 255, 255, .2);
-        top: -13rem;
-        width: 100%;
-        transition: all ease-in-out .4s;
-        left: 0;
-        top: -13rem;
-        flex-direction: column;
-        z-index: -1;
-        visibility: hidden;
-        pointer-events: none;
-    }
-
-    
-    .nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav_menu ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 3rem 0 0.6rem;
-        
-    }
-    .nav_menu ul li {
-        text-align: center;
-    }
-    .nav_menu {
-        z-index: -1;
-    }
-    .nav_menu.active {
-        top: 3.2rem; /* just below nav bar */
-        z-index: 100;
-        visibility: visible;
-        pointer-events: auto;
-    }
-    .nav_hamburger.active :nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .nav_hamburger.active :nth-child(2) {
-        opacity: 0;
-    }
-    .nav_hamburger.active :nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
-
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-body {
-	min-height: 100vh;
-	display: grid;
-	place-items: center;
-
-	--bkg: #5eb3fd;
-	--white: #e7e6e6;
-    overflow: auto;
-    position: relative;
-}
-
-.container {
-	width: 100%;
-	height: 100%;
-	display: grid;
-	place-items: center;
-	overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-    
-}
-
-.title h1 {
-	font-size: 45px;
-	font-weight: 900;
-	font-family: "Montserrat", sans-serif;
-	color: white;
-    justify-content: center;
-        /* margin-top: -75px; */
-}
-
-
+/* GHOST ANIMATION */
 .ghost {
-	width: 8vmin;
-	height: 12vmin;
-	background-color: var(--white);
-	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
-	background-image: radial-gradient(ellipse at 35% 40%, #000 8%, transparent 0%),
-		radial-gradient(ellipse at 65% 40%, #000 8%, transparent 0%),
-		radial-gradient(ellipse at 50% 60%, #000 8%, transparent 0%);
-	border-radius: 100% / 70% 70% 0% 0%;
-	transform: translateX(100em) rotateZ(-90deg);
-	position: relative;
-	opacity: 0.9;
-	mix-blend-mode: exclusion;
-	animation: ghostMove 4s ease-out infinite;
+    width: 8vmin;
+    height: 12vmin;
+    background-color: var(--white);
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    background-image: radial-gradient(ellipse at 35% 40%, #000 8%, transparent 0%),
+        radial-gradient(ellipse at 65% 40%, #000 8%, transparent 0%),
+        radial-gradient(ellipse at 50% 60%, #000 8%, transparent 0%);
+    border-radius: 100% / 70% 70% 0% 0%;
+    transform: translateX(100em) rotateZ(-90deg);
+    position: relative;
+    opacity: 0.9;
+    mix-blend-mode: exclusion;
+    animation: ghostMove 4s ease-in-out infinite;
+}
 
-}
-@keyframes ghostMove {
-	0% {
-		transform: translateX(30em) rotateZ(-90deg);
-	}
-	100% {
-		transform: translateX(-35em) rotateZ(-90deg);
-	}
-}
 .ghost div {
-	position: absolute;
-	width: 20%;
-	background-color: var(--white);
-	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    position: absolute;
+    width: 20%;
+    background-color: var(--white);
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 }
 .ghost div:nth-of-type(1) {
-	height: 7vmin;
-	left: 0;
-	bottom: -6vmin;
-	border-radius: 100% / 0% 0% 50% 50%;
+    height: 7vmin;
+    left: 0;
+    bottom: -6vmin;
+    border-radius: 100% / 0% 0% 50% 50%;
 }
 .ghost div:nth-of-type(2),
 .ghost div:nth-of-type(4) {
-	height: 4vmin;
-	left: 20%;
-	bottom: -3vmin;
-	border-radius: 100% / 50% 50% 0% 0%;
-	background-color: transparent;
+    height: 4vmin;
+    left: 20%;
+    bottom: -3vmin;
+    border-radius: 100% / 50% 50% 0% 0%;
+    background-color: transparent;
 }
 .ghost div:nth-of-type(3) {
-	height: 4vmin;
-	left: 40%;
-	bottom: -3.95vmin;
-	border-radius: 100% / 0% 0% 60% 60%;
-	background-color: var(--white);
+    height: 4vmin;
+    left: 40%;
+    bottom: -3.95vmin;
+    border-radius: 100% / 0% 0% 60% 60%;
+    background-color: var(--white);
 }
 .ghost div:nth-of-type(4) {
-	left: 60%;
+    left: 60%;
 }
 .ghost div:nth-of-type(5) {
-	height: 3vmin;
-	left: 80%;
-	bottom: -2.9vmin;
-	border-radius: 100% / 0% 0% 70% 70%;
-	background-color: var(--white);
-}
-
-/* Ensure nav stays at the top */
-.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 100;
-    background: transparent;
-    padding: 0 1rem;
-}
-
-.ghost {
-    animation: ghostMove 4s ease-in-out infinite;
+    height: 3vmin;
+    left: 80%;
+    bottom: -2.9vmin;
+    border-radius: 100% / 0% 0% 70% 70%;
+    background-color: var(--white);
 }
 
 @keyframes ghostMove {
@@ -510,3 +372,106 @@ body {
         opacity: 0;
     }
 }
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 1100px) {
+    .about-section,
+    .projects-section,
+    .contacts-section {
+        max-width: 98vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-section,
+    .projects-section,
+    .contacts-section {
+        padding: 3vw 2vw;
+    }
+    #profile-image {
+        max-width: 180px;
+        width: 40vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-section,
+    .projects-section,
+    .contacts-section {
+        padding: 1.2rem 0.5rem;
+        max-width: 100vw;
+    }
+    .projects-section h2,
+    .contacts-section h2,
+    .about-text h2 {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+    .contacts-list {
+        gap: 1rem;
+    }
+    .contact-form {
+        max-width: 100%;
+    }
+    #profile-image {
+        max-width: 120px;
+        width: 60vw;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .about-section,
+    .projects-section,
+    .contacts-section {
+        padding: 0.8rem 0.2rem;
+    }
+    .nav_hamburger {
+        display: flex;
+    }
+    .nav_menu {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 255, 255, .2);
+        width: 100vw;
+        left: 0;
+        flex-direction: column;
+        z-index: -1;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all ease-in-out .4s;
+        top: -13rem;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav_menu ul {
+        flex-direction: column;
+        width: 100vw;
+        padding: 3rem 0 0.6rem;
+    }
+    .nav_menu ul li {
+        text-align: center;
+    }
+    .nav_menu.active {
+        top: 3.2rem;
+        z-index: 100;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .nav_hamburger.active :nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav_hamburger.active :nth-child(2) {
+        opacity: 0;
+    }
+    .nav_hamburger.active :nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Font import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
