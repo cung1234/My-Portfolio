@@ -6,6 +6,12 @@
     padding: 0;
 }
 
+body, html {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 :root {
     --box-bg: rgba(160, 176, 201, 0.8);
     --txt_heading: #858585;
