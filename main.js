@@ -46,18 +46,22 @@ links.forEach((link) => {
 
 document.querySelectorAll('a[href="#projects-section"]').forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const section = document.getElementById('projects');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
+        e.preventDefault();
+        window.location.href = 'projects.html';
     });
-  });
+});
 
 document.querySelectorAll('a[href="#home"]').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+});
+
+document.querySelectorAll('a[href="#contacts-section"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    // custom scroll or logic
+  });
 });
 

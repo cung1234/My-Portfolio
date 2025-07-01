@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="contacts.css">
+        <link rel="stylesheet" href="main.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title> Contact Page </title>
+    </head>
+    <body>
+        <div id="navbar-placeholder"></div>
+        <div class="container">
+            <div class="content">
+                <p class="cntct">CONTACT</p>
+                <h2>CONTACT ME</h2>
+
+                <!--box container start-->
+                <div class="inside_container">
+                    <div class="box">
+                        <div class="head-icons">
+                            <span><i class='bx bx-map icons'></i></span>
+                            <h3 class="heading">My Address</h3>
+                        </div>
+                        <p>6518 Sonesta Drive, Indianapolis, IN 46217</p>
+                    </div>
+                    <div class="box">
+                        <div class="head-icons">
+                            <span><i class='bx bx-share-alt icons'></i> </span>
+                            <h3 class="heading">Social Profiles</h3>
+                        </div>
+                        <p class="social icons">
+                            <i class='bx bxl-github'></i>
+                            <i class='bx bxl-instagram'></i>
+                            <i class='bx bxl-linkedin-square'></i>
+
+                        </p>
+                    </div>
+                    <div class="box">
+                        <div class="head-icons">
+                            <span><i class='bx bx-envelope icons'></i> </span>
+                            <h3 class="heading">Email Me</h3>
+                        </div>
+                        <p>cnbawi08@gmail.com</p>
+                    </div>
+                    <div class="box">
+                        <div class="head-icons">
+                            <span><i class='bx bx-phone-call icons'></i> </span>
+                            <h3 class="heading">Call Me</h3>
+                        </div>
+                        <p>(+1) 317-649-6880 </p>
+                    </div>
+                <div class="box">
+                    <div class="form">
+                        <form action="#">
+                            <input type="text" placeholder=" Your Name" class="short-fields">
+                            <input type="email" placeholder=" Your Email" class="short-fields">
+                            <input type="text" placeholder=" Your Subject" class="form-control">
+                            <textarea name="" id="" cols="30" rows="05" class="form-control"></textarea>
+                            <button>Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <!--box container close-->
+            </div>
+        </div>
+        <script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Re-bind hamburger menu logic after navbar is injected
+      const hamburger = document.querySelector('.nav_hamburger');
+      const navMenu = document.querySelector('.nav_menu');
+      const links = document.querySelectorAll('.nav_menu_link a');
+
+      hamburger?.addEventListener('click', (e) => {
+        e.preventDefault();
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 550) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+          }
+        });
+      });
+    })
+    .catch(err => console.error('Navbar failed to load:', err));
+</script>
+    </body>
+</html>
