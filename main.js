@@ -2,12 +2,6 @@ const hamburger = document.querySelector(".nav_hamburger");
 const linksContainer = document.querySelector(".nav_menu");
 const links = document.querySelectorAll(".nav_menu_link a");
 
-// Toggle hamburger menu
-hamburger.addEventListener("click", () => {
-  linksContainer.classList.toggle("active");
-  hamburger.classList.toggle("active");
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.nav_hamburger');
   const navMenu = document.querySelector('.nav_menu');
@@ -59,9 +53,9 @@ document.querySelectorAll('a[href="#home"]').forEach(link => {
 });
 
 document.querySelectorAll('a[href="#contacts-section"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    // custom scroll or logic
-  });
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'contacts.html';
+    });
 });
 
