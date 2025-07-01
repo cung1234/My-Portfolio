@@ -5,7 +5,6 @@
 }
 
 html {
-    background-image: url('stellar.png');
     scroll-behavior: smooth;
 }
 
@@ -26,7 +25,7 @@ body {
     display: grid;
     place-items: center;
     overflow: hidden;
-    background-color: #3c6a92;
+    background-image: url(bg.jpg);
 }
 
 .title {
@@ -64,11 +63,11 @@ hr {
 }
 
 .about-section {
-    background-color: #305472;
+    background-image: url(bg.jpg);
     padding: 4vw 5vw;
     margin: .5rem auto;
     color: black;
-    max-width: 900px;
+    max-width: 1200px;
     width: 100%;
     box-sizing: border-box;
 }
