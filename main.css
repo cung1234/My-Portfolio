@@ -1,24 +1,27 @@
+/* Reset default browser styles and set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Enable smooth scrolling  */
 html {
     scroll-behavior: smooth;
 }
 
+/* Body layout and background variables */
 body {
     min-height: 100vh;
-    display: grid;
+    display: grid; 
     place-items: center;
-    --bkg: #5eb3fd;
     --white: #e7e6e6;
     overflow: auto;
     position: relative;
     width: 100vw;
 }
 
+/* Main container styling with background image */
 .container {
     width: 100vw;
     min-height: 100vh;
@@ -28,14 +31,16 @@ body {
     background-image: url(bg.jpg);
 }
 
+/* Container styling when using Swiper (carousel) */
 .container.swiper {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-top: 4rem; /* To prevent navbar overlap */
+    padding-top: 4rem;
 }
 
+/* Title styling */
 .title {
     font-size: clamp(2rem, 5vw, 40px);
     font-weight: bold;
@@ -44,6 +49,7 @@ body {
     margin-top: 2rem;
 }
 
+/* Main heading inside title */
 .title h1 {
     font-size: clamp(2.5rem, 6vw, 45px);
     font-weight: 900;
@@ -52,12 +58,14 @@ body {
     justify-content: center;
 }
 
+/* Thick horizontal line style */
 hr.thickLine {
     border: 2px solid black;
     border-radius: 1em;
     width: 100%;
 }
 
+/* Default horizontal rule style */
 hr {
     display: block;
     margin-block-start: 0.5em;
@@ -70,6 +78,7 @@ hr {
     border-width: 1px;
 }
 
+/* About section styling */
 .about-section {
     background-image: url(bg.jpg);
     padding: 4vw 5vw;
@@ -84,17 +93,23 @@ hr {
     max-width: 800px;
     margin: auto;
     width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
+/* Text block in about section */
 .about-text {
     flex: 1 1 300px;
 }
 
+/* About section heading */
 .about-text h2 {
     text-align: center;
     font-size: clamp(1.5rem, 5vw, 36px);
 }
 
+/* About section paragraph */
 .about-text p {
     font-size: clamp(1rem, 2.5vw, 24px);
     text-align: center;
@@ -102,17 +117,36 @@ hr {
     line-height: 1.6;
 }
 
+/* Profile image styling */
 #profile-image {
-    display: flex;
-    align-items: center;
+    display: block;
+    float: left;
     max-width: 240px;
-    width: 60vw;
+    width: 40vw;
     height: auto;
-    margin: 0 auto;
+    margin: 0 2rem 1rem 0;
     padding-top: 45px;
 }
 
-/* NAVIGATION */
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    #profile-image {
+        float: none;
+        margin: 0 auto 1rem auto;
+        width: 40vw;
+        max-width: 180px;
+        padding-top: 20px;
+        display: block;
+    }
+}
+
+/* NAVIGATION BAR STYLES */
+
+/* Navbar container */
 .nav {
     position: fixed;
     top: 0;
@@ -128,12 +162,14 @@ hr {
     color: #fff;
 }
 
+/* Navigation menu link list */
 .nav_menu_link {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* Logo in navbar */
 .nav_logo {
     font-size: 1.5rem;
     margin: .5rem 1rem 0 0;
@@ -142,15 +178,18 @@ hr {
     color: #fff;
 }
 
+
 .nav_menu ul {
     margin: 0;
     padding: 0;
     display: flex;
 }
 
+
 .nav_menu ul li {
     list-style: none;
 }
+
 
 .nav_menu ul li a {
     text-decoration: none;
@@ -159,9 +198,11 @@ hr {
     display: block;
 }
 
+/* Hover effect for nav items */
 .nav_menu li:hover {
     background-color: rgba(255, 255, 255, .5);
 }
+
 
 .nav_hamburger {
     width: 1.875rem;
@@ -174,6 +215,7 @@ hr {
     right: 1rem;
 }
 
+
 .nav_hamburger_line {
     height: 0.188rem;
     width: 100%;
@@ -183,6 +225,8 @@ hr {
 }
 
 /* GHOST ANIMATION */
+
+/* Ghost shape and animation */
 .ghost {
     width: 8vmin;
     height: 12vmin;
@@ -199,6 +243,7 @@ hr {
     animation: ghostMove 4s ease-in-out infinite;
 }
 
+/* Ghost bottom waves */
 .ghost div {
     position: absolute;
     width: 20%;
@@ -237,6 +282,7 @@ hr {
     background-color: var(--white);
 }
 
+/* Ghost movement animation keyframes */
 @keyframes ghostMove {
     0% {
         transform: translateX(110vw) rotateZ(-90deg);
@@ -258,6 +304,8 @@ hr {
 }
 
 /* RESPONSIVE MEDIA QUERIES */
+
+/* Adjust section widths and paddings for screens <= 1100px */
 @media (max-width: 1100px) {
     .about-section,
     .projects-section,
@@ -268,6 +316,7 @@ hr {
     }
 }
 
+/* Adjust paddings and image size for screens <= 900px */
 @media (max-width: 900px) {
     .about-section,
     .projects-section,
@@ -280,6 +329,7 @@ hr {
     }
 }
 
+/* Further adjustments for screens <= 700px */
 @media (max-width: 700px) {
     .about-section,
     .projects-section,
@@ -305,6 +355,7 @@ hr {
     }
 }
 
+/* Mobile styles for screens <= 550px */
 @media (max-width: 550px) {
     .about-section,
     .projects-section,
@@ -312,7 +363,7 @@ hr {
         padding: 0.8rem 0.2rem;
     }
     .nav_hamburger {
-        display: flex;
+        display: flex; /* Show hamburger menu */
     }
     .nav_menu {
         position: absolute;
@@ -346,6 +397,7 @@ hr {
         visibility: visible;
         pointer-events: auto;
     }
+    /* Hamburger icon animation for open/close */
     .nav_hamburger.active :nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -357,5 +409,5 @@ hr {
     }
 }
 
-/* Font import */
+/* Import Montserrat font for headings */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
