@@ -28,6 +28,13 @@ body {
     background-image: url(bg.jpg);
 }
 
+.container.swiper {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 4rem; /* To prevent navbar overlap */
+}
 
 .title {
     font-size: clamp(2rem, 5vw, 40px);
